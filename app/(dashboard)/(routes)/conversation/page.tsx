@@ -22,7 +22,7 @@ import { BotAvatar } from "@/components/bot-avatar";
 
 const ConversationPage = () => {
     const router = useRouter();
-    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+    const [messages, setMessages] = useState<any[]>([]);
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -106,7 +106,7 @@ const ConversationPage = () => {
                         <Empty label="No Conversation started"/>
                     )}
                     <div className="flex flex-col-reverse gap-y-4">
-                        {messages.map((message) => (
+                        {messages.map((message: any) => (
                             <div key={message.content}
                             className={cn(
                                 "p-8 w-full flex items-start gap-x-8 rounded-lg",
