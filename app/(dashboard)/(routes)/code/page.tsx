@@ -24,7 +24,7 @@ import { BotAvatar } from "@/components/bot-avatar";
 
 const CodePage = () => {
     const router = useRouter();
-    const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+    const [messages, setMessages] = useState<any[]>([]);
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -38,7 +38,7 @@ const CodePage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-            const userMessage: ChatCompletionRequestMessage = {
+            const userMessage: any = {
                 role: "user",
                 content: values.prompt,
             };
